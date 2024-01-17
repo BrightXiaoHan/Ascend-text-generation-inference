@@ -278,8 +278,7 @@ class HeterogeneousNextTokenChooser:
 class Sampling:
     def __init__(self, seed: int, device: str = "cpu"):
         # TODO npu Generator not support yet
-        if device == "npu":
-            device == "cpu"
+        device = "cpu"
         self.generator = torch.Generator(device)
         self.generator.manual_seed(seed)
         self.seed = seed
